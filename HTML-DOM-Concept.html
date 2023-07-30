@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript HTML DOM</title>
+    </head>
+    <body>
+        <script>
+            //認識內建的windows物件(HTML DOM結構的最上層)
+            console.log(window);
+            //取得視窗的寬度和高度
+            console.log(window.innerHeight, window.innerWidth);
+            //透過screen物件，取得螢幕尺寸
+            console.log(window.screen.width,window.screen.height);
+            //取得網址列的內容
+            console.log(window.location.href);
+            //更改網址列的內容
+            //window.location.href = "https://www.google.com";
+            //認識document物件
+            console.log(window.document);
+            console.dir(document);
+            //取得網頁標題
+            console.log(document.title);
+            //更改網頁標題
+            document.title="New Title";
+            //取得body標籤
+            console.log(document.body);
+
+        </script>
+    </body>
+</html>
