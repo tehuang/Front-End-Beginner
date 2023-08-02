@@ -1,25 +1,47 @@
+<!-- 
+第1步:取得標籤物件
+     a. 透過標籤的ID屬性建立連結
+        e.g. <div id="content">這是一段字</div>
+     b. 在JavaScript程式中利用document.querySelector()方法取得標籤物件
+        e.g. let divElement = document.querySelector("content")
+第2步:操作標籤物件的HTML屬性和CSS設定(相當於用程式碼去做事)
+     a. HTML     
+        e.g. divElement.innerHTML = "這是新的字";
+        e.g. divElement.className = "welcome";
+     b. CSS
+        e.g. divElement.style.fontSize="30px";
+        e.g. divElement.style.color = "blue";  
+-->
+
 <!DOCTYPE html> 
 <html>
     <head>
         <meta charset="utf-8" />
         <title>JavaScript HTML DOM</title>
-        <style>
-            .text{text-decoration:underline;font-weight: bold;}
-        </style>
+        
     </head>
     <body>
-        <h3>HTML DOM 畫面操作</h3>
-        <div id="content">練習網頁畫面的操作</div>
-        <button onclick="change();">Click Me</button>
+        <div>
+            <span onClick="changeToAbout()">About Me</span>
+            <span onclick="changeToEducation();">Education</span>
+        </div>
+        <hr/>
+        <div id = "about">Hi, I am Teresa</div>
+        <div id="exps" style="display: none;">I am currently studying CS master program at Stevens.</div>
+    </body>
         <script>
-            function change(){
-               //取得標籤物件
-                let elem=document.querySelector("#content");
-               //操作標籤物件
-                elem.innerHTML="對特定的標籤做操作";
-                elem.className="text";
-                elem.style.fontSize="30px"; //font-size:30px
-                elem.style.color="red";
+            function changeToAbout(){
+                let aboutDiv =document.querySelector("#about");
+                let expsDiv = document.querySelector("#exps");
+                aboutDiv.style.display="block";
+                expsDiv.style.display="none";   
+            }
+
+            function changeToEducation(){
+                let aboutDiv =document.querySelector("#about");
+                let expsDiv = document.querySelector("#exps");
+                aboutDiv.style.display="none";
+                expsDiv.style.display="block";
             }
         </script>
     </body>
