@@ -1,0 +1,54 @@
+<!-- Event Handling:
+-click
+-mouseover
+-mouseout
+-mousedown
+-mouseup
+
+事件處理3大關鍵:
+1.在哪個標籤上發生事件
+2.事件的種類
+3.事件對應的處理函式
+
+範例1: 使用this關鍵字代表觸發事件的標籤
+<div onclick="change(this)">原本的內文</div>  //this 代表div物件
+<script>
+     function change(elem){ //把物件傳入
+	elem.innerHTML="新的內文";
+}
+</script>
+
+範例2: 多個事件搭配使用
+<button onmousedown="down(this);" onmouseup="up(this);"> 按鈕 </button>
+
+<script>
+    function down(elem){
+      elem.style.color="red";
+    }
+    function up(elem){
+      elem.style.color="black";
+    }
+</script>
+ -->
+
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript: Event Handling</title>
+    </head>
+    <body>
+        <h3>事件處理的練習</h3>
+        <button onclick="console.log('點擊事件');"
+                onmouseover="console.log('滑鼠移入');"
+                onmouseout="console.log('滑鼠移出');"
+                onmousedown="console.log('滑鼠按住');"
+                onmouseup="console.log('滑鼠放開');"        
+        >Click
+        </button>
+
+        <script>
+
+        </script>
+    </body>
+</html>
