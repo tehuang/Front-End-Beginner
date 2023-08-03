@@ -1,4 +1,5 @@
-<!-- Event Handling:
+<!-- 
+Event Handling 種類:
 -click
 -mouseover
 -mouseout
@@ -36,19 +37,43 @@
     <head>
         <meta charset="utf-8" />
         <title>JavaScript: Event Handling</title>
+        <style>
+            .btn{
+                background-color: #ffcccc;
+                padding: 10px;
+                border-radius: 5px;
+                cursor:pointer;
+            }
+        </style>
     </head>
     <body>
         <h3>事件處理的練習</h3>
-        <button onclick="console.log('點擊事件');"
-                onmouseover="console.log('滑鼠移入');"
-                onmouseout="console.log('滑鼠移出');"
-                onmousedown="console.log('滑鼠按住');"
-                onmouseup="console.log('滑鼠放開');"        
-        >Click
-        </button>
+        <span class="btn" 
+        onmouseover="over(this);"
+        onmouseout="out(this);"
+        onmousedown="down(this);"
+        onmouseup="up(this);"
+        >Click Me</span>
 
+        <span class="btn" 
+        onmouseover="over(this);"
+        onmouseout="out(this);"
+        onmousedown="down(this);"
+        onmouseup="up(this);"
+        >Second Button</span>
         <script>
-
+            function over(elem){
+                elem.style.backgroundColor="#ddaaaa";
+            }
+            function out(elem){
+                elem.style.backgroundColor="#ffcccc";
+            }
+            function down(elem){
+                elem.style.fontWeight="bold";
+            }
+            function up(elem){
+                elem.style.fontWeight="normal";
+            }
         </script>
     </body>
 </html>
