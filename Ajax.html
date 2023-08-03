@@ -1,0 +1,54 @@
+<!-- 
+AJAX網路連線(利用JavaScript程式進行網路連線) 
+fetch:JavaScript內建的連線用函式
+
+基本語法:
+fetch(網址).then(function(回應物件){
+	console.log(回應物件);
+});
+
+處理不同格式的回應
+1. 取得純文字的回應
+fetch(網址).then(function(response){
+	return response.text();
+}).then(function(data){
+	console.log(data); //純文字資料
+});
+
+2. 取得JSON格式的回應
+fetch(網址).then(function(response){
+	return response.json();
+}).then(function(data){
+	console.log(data); //JSON格式資料
+}); 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>AJAX</title>
+</head>
+<body>
+	<h1>AJAX 網路連線基本操作</h1>
+	<button onclick="getData();">連線取得資料</button>
+    <div id="result"></div>
+	<script>
+        function getData(){
+            //利用fetch進行連線並取得資料
+            fetch("https://cwpeng.github.io/live-records-samples/data/products.json").then(function(response){
+                return response.json();
+            }).then(function(data){
+                //已經取得資料，把資料呈現到畫面上
+                let result=document.querySelector("#result");
+                result.innerHTML=""; //先把畫面清空
+                for(let i=0; i<data.length;i++){
+                    let product=data[i];
+                    result.innerHTML+="<div>"+product.name+","+product.price+","+product.description+"</div>";
+                }
+                
+            });
+        }
+	</script>
+</body>
+</html>
