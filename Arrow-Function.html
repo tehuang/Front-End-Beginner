@@ -1,0 +1,75 @@
+<!-- Arrow Function = 函式的另一種寫法，省去 "function", 用"=>"取代
+
+Function #1: 
+function 名稱 (參數){
+  內部程式碼
+  return value; 
+}
+
+Function #2: 
+let 名稱 = function(參數){
+  內部程式碼
+  return value; 
+}
+
+Arrow Function: 
+let 名稱 = (參數) =>{
+  內部程式碼
+  return value; 
+}
+
+E.g. 
+let add = (n1,n2)=>{
+  let result = n1+n2; 
+  return result; 
+}
+
+更簡化的寫法:
+let 名稱= (參數) =>(value);
+E.g. 
+let add = (n1,n2) => (n1+n2); -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Arrow Function</title>
+</head>
+<body>
+	<script>
+        //一般函式
+        // function calculate(max){
+        //     let result=0; 
+        //     let n=1; 
+        //     while(n<=max){
+        //         result+=n;
+        //         n++;
+        //     }
+        //     return result; 
+        // }
+
+        //Arrow Function 建立calculate
+        let calculate=(max)=>{
+            let result=0; 
+            let n=1; 
+            while(n<=max){
+                result+=n;
+                n++;
+            }
+            return result; 
+        };
+
+        //呼叫函式
+        let ans1 = calculate(10);
+        let ans2 = calculate(20);
+        console.log(ans1,ans2);
+
+        //乘法的函式(簡化)
+        let multiply=(n1,n2)=>(n1*n2);
+        let ans=multiply(3,4);
+        console.log(ans);
+        
+	</script>
+</body>
+</html>
