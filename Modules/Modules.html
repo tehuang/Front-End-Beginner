@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Modules</title>
+</head>
+<body>
+    <!-- Module: 單一程式切割為多個檔案。每個程式檔案稱為Module。
+
+    JavaScript Module System
+    E.g. 
+    <script>
+    function echo(msg){
+        console.log(msg); 
+    }
+    let name = "又大又肥的program";
+    echo(name); 
+    </script>
+
+
+    現在，假如切割成兩個檔案，但前提是要先建立輸出/輸入的關聯性
+
+    1. 檔案名稱lib.js
+    function echo(msg){
+        console.log(msg); 
+    }
+    export default echo; //export default資料
+
+    2. main.js
+    import echo from "./lib.js"; //import 資料 from "模組檔案路徑"
+    let name = "又大又肥的program";
+    echo(name); 
+
+    3. HTML中引入主要的程式檔案
+    <script type="module" src="main.js"></script>  //src=路徑檔名
+
+
+    模組本身有獨立性，他們有各自的名稱空間，互不影響。
+    e.g. 在main.js裡，let name="又大又肥的program"; 同時lib.js也有程式碼，let name = "I am Teresa"; 
+    兩者並不衝突 -->
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
